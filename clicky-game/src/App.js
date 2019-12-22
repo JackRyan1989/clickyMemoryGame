@@ -2,6 +2,8 @@ import React from 'react';
 import images from './images.json';
 import CardDisp from "../src/components/CardDisp";
 import MainContent from "../src/components/MainContent";
+import Col from 'react-bootstrap/Col';
+import Row from 'react-bootstrap/Row';
 import './App.css';
 
 class App extends React.Component {
@@ -9,30 +11,53 @@ class App extends React.Component {
     super(props)
     this.state = {
       images,
-      clicked: false,
-      score: 0
+      score: 0,
+      highScore: 0,
+      clicked: false
     }
-  }   
-  
-  //Write counter function for score
+  }
 
-  //Write remove function for when a card is clicked
+  //Counter function for score & change clicked state to true
+  handleScore = () => {
+    this.setState({ score: this.state.score + 1});
+  }
 
-  //Write a third function that will determin a loss condition, maybe a filter?
+  //Determine a loss condition, maybe a filter?
+  determineLoss = clicked => {
+    if (clicked) {
+      console.log("This image has been clicked before")
+    }
+  } 
 
   render() {
-  return (
+    //Marginally randomize the images:
+    const sortedArr = this.state.images.sort(() =>  Math.random() - 0.5);
+    return (
       <MainContent>
         <h1 className="title text-center">Clicky Game</h1>
         <h3 className="text-center">Keep clicking till you can't remember!</h3>
-        <CardDisp 
-          key={images.id}
-          id={images.id}
-          src={images.image}
-        />
+        <Row>
+          <Col lg={6} className="m-3 text-center">
+            Your Score: {this.state.score}
+          </Col>
+        </Row>
+        <Row>
+          <Col>
+            {sortedArr.map(image => (
+              <CardDisp
+                clicked={this.state.clicked}
+                key={image.id}
+                id={image.id}
+                image={image.image}
+                score={this.handleScore}
+                loss={this.determineLoss}
+              />
+            ))}
+          </Col>
+        </Row>
       </MainContent>
-  )
-}
+    )
+  }
 
 }
 

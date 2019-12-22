@@ -6,12 +6,10 @@ import Image from 'react-bootstrap/Image';
 
 function CardDisp(props) {
     return (
-        <Card>
-            <Container>
-                <Col xs={6} md={3}>
-                <Image src={props.src} key={props.key} id={props.id} />
-                </Col>
-            </Container>
+        <Card style={{ width: '3rem' }}>
+            <Col lg={3}>
+                <Image onClick={props.score} variant='top' src={props.image} id={props.id} clicked={props.clicked.toString()} thumbnail fluid />
+            </Col>
         </Card>
     )
 }
