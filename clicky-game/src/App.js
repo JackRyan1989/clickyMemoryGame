@@ -13,25 +13,31 @@ class App extends React.Component {
       images,
       score: 0,
       highScore: 0,
-      clicked: false
+      clicked: 'false'
     }
   }
 
   //Counter function for score & change clicked state to true
-  handleScore = () => {
-    this.setState({ score: this.state.score + 1});
+  handleClick = (event) => {
+    const { clicked } = event.target
+    if (clicked) {
+      this.determineLoss()
+    } else {
+      this.setState({
+        score: this.state.score + 1,
+        clicked: 'true'
+      });
+    }
   }
 
   //Determine a loss condition, maybe a filter?
-  determineLoss = clicked => {
-    if (clicked) {
+  determineLoss= () => {
       console.log("This image has been clicked before")
-    }
-  } 
+  }
 
   render() {
     //Marginally randomize the images:
-    const sortedArr = this.state.images.sort(() =>  Math.random() - 0.5);
+    const sortedArr = this.state.images.sort(() => Math.random() - 0.5);
     return (
       <MainContent>
         <h1 className="title text-center">Clicky Game</h1>
@@ -49,7 +55,7 @@ class App extends React.Component {
                 key={image.id}
                 id={image.id}
                 image={image.image}
-                score={this.handleScore}
+                score={this.handleClick}
                 loss={this.determineLoss}
               />
             ))}
