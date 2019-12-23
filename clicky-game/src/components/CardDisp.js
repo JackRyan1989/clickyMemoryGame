@@ -3,6 +3,7 @@ import Card from 'react-bootstrap/Card';
 import Image from 'react-bootstrap/Image';
 import './cardDisp.css';
 
+
 function CardDisp(props) {
     return (
         <div className="mx-auto">

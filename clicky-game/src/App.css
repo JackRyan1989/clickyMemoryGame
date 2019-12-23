@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css?family=Lobster|Pacifico&display=swap');
+
 .App {
   text-align: center;
 }
@@ -26,6 +28,12 @@
 
 .App-link {
   color: #61dafb;
+}
+
+.navbar {
+  background-color: purple;
+  color: white;
+  font-family: 'Pacifico', cursive;
 }
 
 @keyframes App-logo-spin {

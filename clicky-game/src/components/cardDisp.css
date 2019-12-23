@@ -1,3 +1,14 @@
+@import url('https://fonts.googleapis.com/css?family=Lobster|Pacifico&display=swap');
+
+.jumbo {
+    background-image: url('../assets/ren-and-stimpy-background-1.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: -0px;
+    font-family: 'Pacifico', cursive;
+    font-weight: bold;
+}
+
 .card {
     overflow: auto;
 }
@@ -5,8 +16,10 @@
 .card-img-top {
     height: 15vw;
     object-fit: cover;
+    transition: box-shadow 0.3s;
+    will-change: transform;
 }
 
 .card-img-top:hover {
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    box-shadow: 0 8px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }

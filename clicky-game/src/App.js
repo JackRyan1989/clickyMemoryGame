@@ -3,9 +3,9 @@ import images from './images.json';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import CardDisp from "../src/components/CardDisp";
 import Container from 'react-bootstrap/Container';
-import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
 import Jumbotron from 'react-bootstrap/Jumbotron';
+import Navbar from 'react-bootstrap/Navbar';
 import './App.css';
 
 class App extends React.Component {
@@ -49,21 +49,19 @@ class App extends React.Component {
     const sortedArr = this.state.images.sort(() => Math.random() - 0.5);
     return (
       <div>
-        <Jumbotron fluid className='text-center bg-danger text-white'>
-          <h1 className='mx-3'>Ren and Stimpy Memory Game</h1>
-          <h3 className='mx-3'>Keep clicking till you can't remember!</h3>
+        <Navbar className='navbar fixed-top my-2 my-lg-0 justify-content-between'>
+              <h4 className="text-center p-2">Your Score: {this.state.score} | High Score: {this.state.highScore}</h4>
+              <p className='navbar-nav ml-auto'><a className="text-white navbar-text" href="https://github.com/JackRyan1989/clickyMemoryGame">Made by Jack Ryan</a></p>
+        </Navbar>
+        <Jumbotron fluid className='text-center jumbo text-white'>
+          <Row className='m-5'></Row>
+          <Row className='m-5'></Row>
+          <h1 className='m-5'>Ren and Stimpy Memory Game</h1>
+          <h2 className='m-2'>Keep clicking to get points, just don't click the same thing twice!</h2>
+          <Row className='m-5'></Row>
+          <Row className='m-5'></Row>
         </Jumbotron>
         <Container sm={12}>
-          <Row>
-            <Col sm={3} md={3}></Col>
-            <Col sm={3} md={3}>
-              <h4 className="text-center p-2 border-bottom">Your Score: {this.state.score}</h4>
-            </Col>
-            <Col sm={3} md={3}>
-              <h4 className="text-center p-2 border-bottom">High Score: {this.state.highScore}</h4>
-            </Col>
-            <Col sm={3} md={3}></Col>
-          </Row>
           <Row>
               {sortedArr.map(image => (
                 <CardDisp
