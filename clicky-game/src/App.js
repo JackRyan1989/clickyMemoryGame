@@ -49,29 +49,34 @@ class App extends React.Component {
     const sortedArr = this.state.images.sort(() => Math.random() - 0.5);
     return (
       <div>
-      <Jumbotron fluid>
-          <h1 >Clicky Game</h1>
-          <h3 >Keep clicking till you can't remember!</h3>
-      </Jumbotron>
-      <Container col={12}>
-        <Row>
-          <Col>
-            Your Score: {this.state.score}
-          </Col>
-          <Col>
-            High Score: {this.state.highScore}
-          </Col>
-        </Row>
-        {sortedArr.map(image => (
-          <CardDisp
-            key={image.id}
-            id={image.id}
-            image={image.image}
-            score={this.handleClick}
-          />
-        ))}
+        <Jumbotron fluid className='text-center bg-danger text-white'>
+          <h1 className='mx-3'>Ren and Stimpy Memory Game</h1>
+          <h3 className='mx-3'>Keep clicking till you can't remember!</h3>
+        </Jumbotron>
+        <Container sm={12}>
+          <Row>
+            <Col sm={3} md={3}></Col>
+            <Col sm={3} md={3}>
+              <h4 className="text-center p-2 border-bottom">Your Score: {this.state.score}</h4>
+            </Col>
+            <Col sm={3} md={3}>
+              <h4 className="text-center p-2 border-bottom">High Score: {this.state.highScore}</h4>
+            </Col>
+            <Col sm={3} md={3}></Col>
+          </Row>
+          <Row>
+              {sortedArr.map(image => (
+                <CardDisp
+                  className="float-left"
+                  key={image.id}
+                  id={image.id}
+                  image={image.image}
+                  score={this.handleClick}
+                />
+              ))}
+          </Row>
         </Container>
-        </div>
+      </div>
     )
   }
 
