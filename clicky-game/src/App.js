@@ -32,11 +32,13 @@ class App extends React.Component {
     this.state.clickedArr.push(id);
   }
 
-  //Determine a loss condition, maybe a filter?
+  //Determine a loss condition
   determineLoss= () => {
-      console.log("This image has been clicked before")
+      alert(`You lose! Good job though, you got ${this.state.score} correct!`);
       this.setState({
-        highScore: this.state.score
+        highScore: this.state.score,
+        score: 0,
+        clickedArr: []
       })
   }
 
@@ -50,6 +52,9 @@ class App extends React.Component {
         <Row>
           <Col lg={6} className="m-3 text-center">
             Your Score: {this.state.score}
+          </Col>
+          <Col lg={6} className="m-3 text-center">
+            High Score: {this.state.highScore}
           </Col>
         </Row>
         <Row>
