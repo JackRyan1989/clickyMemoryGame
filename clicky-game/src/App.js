@@ -1,9 +1,11 @@
 import React from 'react';
 import images from './images.json';
+import 'bootstrap/dist/css/bootstrap.min.css';
 import CardDisp from "../src/components/CardDisp";
-import MainContent from "../src/components/MainContent";
+import Container from 'react-bootstrap/Container';
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
+import Jumbotron from 'react-bootstrap/Jumbotron';
 import './App.css';
 
 class App extends React.Component {
@@ -33,43 +35,43 @@ class App extends React.Component {
   }
 
   //Determine a loss condition
-  determineLoss= () => {
-      alert(`You lose! Good job though, you got ${this.state.score} correct!`);
-      this.setState({
-        highScore: this.state.score,
-        score: 0,
-        clickedArr: []
-      })
+  determineLoss = () => {
+    alert(`You lose! Good job though, you got ${this.state.score} correct!`);
+    this.setState({
+      highScore: this.state.score,
+      score: 0,
+      clickedArr: []
+    })
   }
 
   render() {
     //Marginally randomize the images:
     const sortedArr = this.state.images.sort(() => Math.random() - 0.5);
     return (
-      <MainContent>
-        <h1 className="title text-center">Clicky Game</h1>
-        <h3 className="text-center">Keep clicking till you can't remember!</h3>
+      <div>
+      <Jumbotron fluid>
+          <h1 >Clicky Game</h1>
+          <h3 >Keep clicking till you can't remember!</h3>
+      </Jumbotron>
+      <Container col={12}>
         <Row>
-          <Col lg={6} className="m-3 text-center">
+          <Col>
             Your Score: {this.state.score}
           </Col>
-          <Col lg={6} className="m-3 text-center">
+          <Col>
             High Score: {this.state.highScore}
           </Col>
         </Row>
-        <Row>
-          <Col>
-            {sortedArr.map(image => (
-              <CardDisp
-                key={image.id}
-                id={image.id}
-                image={image.image}
-                score={this.handleClick}
-              />
-            ))}
-          </Col>
-        </Row>
-      </MainContent>
+        {sortedArr.map(image => (
+          <CardDisp
+            key={image.id}
+            id={image.id}
+            image={image.image}
+            score={this.handleClick}
+          />
+        ))}
+        </Container>
+        </div>
     )
   }
 
