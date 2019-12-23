@@ -13,26 +13,31 @@ class App extends React.Component {
       images,
       score: 0,
       highScore: 0,
-      clicked: 'false'
+      clickedArr: []
     }
   }
 
   //Counter function for score & change clicked state to true
   handleClick = (event) => {
-    const { clicked } = event.target
-    if (clicked) {
+    const { id } = event.target
+    //Determine if the id exists in the array first:
+    if (this.state.clickedArr.includes(id)) {
       this.determineLoss()
     } else {
       this.setState({
-        score: this.state.score + 1,
-        clicked: 'true'
+        score: this.state.score + 1
       });
     }
+    //Then push the id to the array:
+    this.state.clickedArr.push(id);
   }
 
   //Determine a loss condition, maybe a filter?
   determineLoss= () => {
       console.log("This image has been clicked before")
+      this.setState({
+        highScore: this.state.score
+      })
   }
 
   render() {
@@ -51,12 +56,10 @@ class App extends React.Component {
           <Col>
             {sortedArr.map(image => (
               <CardDisp
-                clicked={this.state.clicked}
                 key={image.id}
                 id={image.id}
                 image={image.image}
                 score={this.handleClick}
-                loss={this.determineLoss}
               />
             ))}
           </Col>

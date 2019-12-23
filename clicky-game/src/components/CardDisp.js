@@ -8,7 +8,7 @@ function CardDisp(props) {
     return (
         <Card style={{ width: '3rem' }}>
             <Col lg={3}>
-                <Image onClick={props.score} variant='top' src={props.image} id={props.id} clicked={props.clicked.toString()} thumbnail fluid />
+                <Image onClick={props.score} variant='top' src={props.image} id={props.id} thumbnail fluid />
             </Col>
         </Card>
     )
