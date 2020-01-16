@@ -1,0 +1,26 @@
+{
+  "files": {
+    "main.css": "/clickyMemoryGame/clicky-game/static/css/main.cb0d758f.chunk.css",
+    "main.js": "/clickyMemoryGame/clicky-game/static/js/main.7be71714.chunk.js",
+    "main.js.map": "/clickyMemoryGame/clicky-game/static/js/main.7be71714.chunk.js.map",
+    "runtime-main.js": "/clickyMemoryGame/clicky-game/static/js/runtime-main.1a19f0bd.js",
+    "runtime-main.js.map": "/clickyMemoryGame/clicky-game/static/js/runtime-main.1a19f0bd.js.map",
+    "static/css/2.17e5ed98.chunk.css": "/clickyMemoryGame/clicky-game/static/css/2.17e5ed98.chunk.css",
+    "static/js/2.c063bf78.chunk.js": "/clickyMemoryGame/clicky-game/static/js/2.c063bf78.chunk.js",
+    "static/js/2.c063bf78.chunk.js.map": "/clickyMemoryGame/clicky-game/static/js/2.c063bf78.chunk.js.map",
+    "index.html": "/clickyMemoryGame/clicky-game/index.html",
+    "precache-manifest.a5e2db52ca7da07b9e7cd6698be6e1b3.js": "/clickyMemoryGame/clicky-game/precache-manifest.a5e2db52ca7da07b9e7cd6698be6e1b3.js",
+    "service-worker.js": "/clickyMemoryGame/clicky-game/service-worker.js",
+    "static/css/2.17e5ed98.chunk.css.map": "/clickyMemoryGame/clicky-game/static/css/2.17e5ed98.chunk.css.map",
+    "static/css/main.cb0d758f.chunk.css.map": "/clickyMemoryGame/clicky-game/static/css/main.cb0d758f.chunk.css.map",
+    "static/js/2.c063bf78.chunk.js.LICENSE": "/clickyMemoryGame/clicky-game/static/js/2.c063bf78.chunk.js.LICENSE",
+    "static/media/cardDisp.css": "/clickyMemoryGame/clicky-game/static/media/ren-and-stimpy-background-1.36daf958.jpg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.1a19f0bd.js",
+    "static/css/2.17e5ed98.chunk.css",
+    "static/js/2.c063bf78.chunk.js",
+    "static/css/main.cb0d758f.chunk.css",
+    "static/js/main.7be71714.chunk.js"
+  ]
+}
